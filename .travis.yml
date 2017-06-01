@@ -1,7 +1,10 @@
 language: cpp
 compiler:
-  - clang
   - gcc
 
 script:
   - ./configure && make
+  - ./configure --debug --assert && make
+  - ./configure --edges64bit && make
+  - ./configure --vertices64bit && make
+  - ./configure --edges64bit --vertices64bit && make

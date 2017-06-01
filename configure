@@ -40,7 +40,7 @@ show_help() {
   echo "    Build with assertions on."
   echo "  --prefix=<prefix>"
   echo "    Set the install prefix."
-  echo "  --shared"
+  echo "  --static"
   echo "    Generate a shared version of lib${NAME} instead of a static one."
   echo "  --cc=<cc>"
   echo "    Set the C compiler to use."
@@ -50,8 +50,6 @@ show_help() {
   echo "    Use 64 bit data types for edges instead of 32 bit."
   echo "  --vertices64bit"
   echo "    Use 64 bit data types for vertices instead of 32 bit."
-  echo "  --no-zlib"
-  echo "    Build without zlib support (disables some graph formats)."
   echo ""
 }
 
@@ -89,9 +87,9 @@ for i in "${@}"; do
     --prefix=*)
     CONFIG_FLAGS="${CONFIG_FLAGS} -DCMAKE_INSTALL_PREFIX=${i#*=}"
     ;;
-    # shared
-    --shared)
-    CONFIG_FLAGS="${CONFIG_FLAGS} -DSHARED=1"
+    # static
+    --static)
+    CONFIG_FLAGS="${CONFIG_FLAGS} -DSTATIC=1"
     ;;
     # cc
     --cc=*)
