@@ -1,7 +1,5 @@
-# {#mainpage}
-
 Nerstrand
-=============================
+=========
 
 Nerstrand is a multi-threaded multilevel graph clustering tool for generating
 clusterings with high modularity. It supports both finding a specified number
@@ -10,7 +8,7 @@ clusters/communities.
 
 
 The 'nerstrand' Executable
------------------------------
+--------------------------
 
 Nerstrand can then be used to cluster a graph as follows:
 
@@ -36,8 +34,17 @@ the '-h' option to view these.
     
 
 
+Unit Tests
+----------
+
+<a href="https://travis-ci.org/dlasalle/nerstrand">
+  <img src="https://travis-ci.org/dlasalle/nerstrand.svg?branch=master"/>
+</a>
+
+
+
 The Nerstrand API
--------------------------------
+-----------------
 
 The file [nerstrand.h](@ref nerstrand.h) is the header that should be included
 by external programs wishing link to Nerstrand. It contains three functions for
