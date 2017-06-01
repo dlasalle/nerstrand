@@ -1,6 +1,6 @@
 [submodule "domlib"]
 	path = domlib
-	url = git@github.com:dlasalle/domlib
+	url = ../domlib
 [submodule "wildriver"]
 	path = wildriver
-	url = git@github.com:dlasalle/wildriver
+	url = ../wildriver
