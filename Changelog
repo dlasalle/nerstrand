@@ -1,0 +1,42 @@
+# Changelog
+
+
+0.5.0 - 2016.03.31
+  Converted to using dlthreads.
+  Fixed configuration file to compile without warnings as default.
+  Fixed miscellaneous C standard violations.
+
+0.4.6 - 2014.10.26
+  Added namespace preserving macros.
+  Added INSTALL file.
+
+0.4.5 - 2014.10.03
+  Fixed possible bug for large number of edges (4 billion) but moderate amount 
+    of vertices.
+  Modified the binary to allow for input of vertex-interal edge weights.
+
+
+0.4.4 - 2014.09.29
+  Fixed issue floating point exception when the number of threads is greater
+    than the number of vertices.
+  Changed cluster output to be through Bowstring.
+
+0.4.3 - 2014.09.15
+  Implemented edge number tracking to properly handle floating point edge
+    weights.
+
+0.4.2 - 2014.08.27
+  Improved stability of floating point edge weights.
+  Modified print out to include statistics on cluster sizes.
+  Changed library call to by default print nothing.
+
+0.4.1 - 2014.08.06
+  Added "--no-zlib" option to configure script.
+  Lots of refactoring.
+  Improved documentation of internal functions.
+
+0.4.0 - 2014.07.11
+  Added changelog.
+  Switched from using 'make config' to using a 'configure' script.
+  Compatibility fixes for new version of domlib.
+

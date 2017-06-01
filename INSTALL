@@ -1,0 +1,41 @@
+Nerstrand
+=========
+
+Nerstrand uses the standard Unix/Linux procedure for building and installtion,
+'configure', 'make', and 'make install'. 
+
+
+Building Nerstrand
+------------------
+
+Building Nerstrand requires a C99 compiler supporting OpenMP specification 3.0
+or greater (almost all of my testing is with GCC 4.7 and 4.8) and CMake. The
+configure script requires Bash, however it is possible to do the configuration
+by hand. 
+
+
+To build Nerstrand with the default options, execute:
+
+    ./configure
+
+    make
+
+
+After it is built, the binary and the library will reside in
+./build/[system-arch]/bin and ./build/[system-arch]/lib respectively (for most
+systems, [system-arch] will be Linux-x86_64, but depends on your
+OS/architecture). 
+
+
+
+Installing Nerstrand
+--------------------
+
+Nerstrand can then be installed using: 
+
+   make install 
+
+The default prefix is /usr/local, but can be changed with:
+
+   configure --prefix="my_prefix"
+
