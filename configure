@@ -50,8 +50,6 @@ show_help() {
   echo "    Use 64 bit data types for edges instead of 32 bit."
   echo "  --vertices64bit"
   echo "    Use 64 bit data types for vertices instead of 32 bit."
-  echo "  --no-zlib"
-  echo "    Build without zlib support (disables some graph formats)."
   echo ""
 }
 

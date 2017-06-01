@@ -30,17 +30,18 @@ endif()
 
 if (DEFINED BIGEDGES AND BIGEDGES)
   add_definitions(-DNERSTRAND_64BIT_EDGES=${BIGEDGES})
+  add_definitions(-DWILDRIVER_INDEX_TYPE=uint64_t)
+else()
+  add_definitions(-DWILDRIVER_INDEX_TYPE=uint32_t)
 endif()
 
 if (DEFINED BIGVERTICES AND BIGVERTICES)
   add_definitions(-DNERSTRAND_64BIT_VERTICES=${BIGVERTICES})
+  add_definitions(-DWILDRIVER_DIMENSION_TYPE=uint64_t)
+else()
+  add_definitions(-DWILDRIVER_DIMENSION_TYPE=uint32_t)
 endif()
 
-if (NOT DEFINED DISABLE_ZLIB OR NOT DISABLE_ZLIB)
-  set(REQ_LIBS ${REQ_LIBS} z)
-else()
-  add_definitions(-DDISABLE_ZLIB=${DISABLE_ZLIB})
-endif()
 set(REQ_LIBS ${REQ_LIBS} m)
 
 if (DEFINED DEVEL AND NOT DEVEL EQUAL 0)
