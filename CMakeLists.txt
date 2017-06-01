@@ -22,10 +22,10 @@ else()
   message("Building an optimized release")
 endif()
 
-if (SHARED)
-  set(NERSTRAND_LIBRARY_TYPE SHARED)
-else()
+if (STATIC)
   set(NERSTRAND_LIBRARY_TYPE STATIC)
+else()
+  set(NERSTRAND_LIBRARY_TYPE SHARED)
 endif()
 
 if (DEFINED BIGEDGES AND BIGEDGES)
