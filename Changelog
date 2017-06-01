@@ -1,5 +1,8 @@
 # Changelog
 
+0.5.1 - 2017.06.01
+  Switch to using 'wildriver' instead of 'bowstring'.
+  Update version of 'domlib'.
 
 0.5.0 - 2016.03.31
   Converted to using dlthreads.
