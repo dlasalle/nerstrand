@@ -66,6 +66,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 # build wildriver
 add_subdirectory("${WILDRIVER_PATH}")
 
+# use gnu directories
+include(GNUInstallDirs)
+
 include_directories("${CMAKE_SOURCE_DIR}/include")
 include_directories("${DOMLIB_PATH}")
 include_directories("${WILDRIVER_PATH}/include")

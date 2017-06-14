@@ -114,9 +114,6 @@ for i in "${@}"; do
   esac
 done
 
-# disable zlib by default
-CONFIG_FLAGS="${CONFIG_FLAGS} -DDISABLE_ZLIB=1"
-
 # check if cmake exists
 if [[ ! -x "${CMAKE}" ]]; then
   die "Could not find usable cmake: '${CMAKE}'" 
