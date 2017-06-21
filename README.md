@@ -13,19 +13,19 @@ Packages
 Built using https://bytepackager.com.
 
 <a href="https://github.com/dlasalle/nerstrand/releases">
-  <img src="https://bytepackager.com/badge/gEPXg1r6DT59igo13Ccz95V_zQ0/status.svg"/>
+  <img src="https://bytepackager.com/badge/xoguahkIzHq9O1OgT3opySIVJ3A/status.svg"/>
 </a>
 
 <a href="https://github.com/dlasalle/nerstrand/releases">
-  <img src="https://bytepackager.com/badge/-ykopJ0qnxvKkqPSGNjPZeVQBx0/status.svg"/>
+  <img src="https://bytepackager.com/badge/YgTwmFEn4A5u2i8Bd-kGeuJu86c/status.svg"/>
 </a>
 
 <a href="https://github.com/dlasalle/nerstrand/releases">
-  <img src="https://bytepackager.com/badge/XHIOUC5VWvlXNDxx-wyT6KJufm8/status.svg"/>
+  <img src="https://bytepackager.com/badge/Tx36QrcDiK4cD6LyN2yR25YhwBU/status.svg"/>
 </a>
 
 <a href="https://github.com/dlasalle/nerstrand/releases">
-  <img src="https://bytepackager.com/badge/BC6x6lxhg_EyWzdehbUlrwUYb8Q/status.svg"/>
+  <img src="https://bytepackager.com/badge/IrUcbkkLLSx-5XLjyU3Byr_YNIE/status.svg"/>
 </a>
 
 
