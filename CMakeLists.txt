@@ -42,6 +42,13 @@ else()
   add_definitions(-DWILDRIVER_DIMENSION_TYPE=uint32_t)
 endif()
 
+if (DEFINED DOUBLEWEIGHTS AND DOUBLEWEIGHTS)
+  add_definitions(-DNERSTRAND_DOUBLE_WEIGHTS=${DOUBLEWEIGHTS})
+  add_definitions(-DWILDRIVER_VALUE_TYPE=double)
+else()
+  add_definitions(-DWILDRIVER_VALUE_TYPE=float)
+endif()
+
 set(REQ_LIBS ${REQ_LIBS} m)
 
 if (DEFINED DEVEL AND NOT DEVEL EQUAL 0)
