@@ -6,11 +6,6 @@ add_library(nerstrand ${NERSTRAND_LIBRARY_TYPE}
   ${nerstrand_sources}
   ${domlib_sources}
 ) 
-#install(TARGETS nerstrand 
-#  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-#  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-#  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-#)
 
 install(TARGETS nerstrand 
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
