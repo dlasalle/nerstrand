@@ -1,6 +1,10 @@
 Nerstrand
 =========
 
+<a href="https://travis-ci.org/dlasalle/nerstrand">
+  <img src="https://travis-ci.org/dlasalle/nerstrand.svg?branch=master"/>
+</a>
+
 Nerstrand is a multi-threaded multilevel graph clustering tool for generating
 clusterings with high modularity. It supports both finding a specified number
 of clusters/communities as well as detecting the number of
@@ -40,16 +44,6 @@ the '-h' option to view these.
 ```
 nerstrand -h
 ```
-    
-
-
-Unit Tests
-----------
-
-<a href="https://travis-ci.org/dlasalle/nerstrand">
-  <img src="https://travis-ci.org/dlasalle/nerstrand.svg?branch=master"/>
-</a>
-
 
 
 The Nerstrand API
