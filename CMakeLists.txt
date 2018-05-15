@@ -70,7 +70,14 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99")
 add_subdirectory("${WILDRIVER_PATH}")
 
 # use gnu directories
-include(GNUInstallDirs)
+if (NOT WIN32)
+  # use gnu directories
+  include(GNUInstallDirs)
+else()
+  set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+endif()
+
+
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
