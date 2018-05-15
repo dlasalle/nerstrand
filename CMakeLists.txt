@@ -9,6 +9,12 @@ if (NOT DEFINED WILDRIVER_PATH)
   set(WILDRIVER_PATH "wildriver")
 endif()
 
+if (NOT DEFINED DOMLIB_PATH)
+  set(DOMLIB_PATH "domlib")
+endif()
+
+
+
 if (DEFINED DEBUG OR DEFINED ASSERT)
   if (DEFINED DEBUG)
     add_definitions(-DDEBUG=${DEBUG})
