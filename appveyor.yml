@@ -1,0 +1,28 @@
+version: "build-{build}"
+
+environment:
+  matrix:
+  - VS_VERSION: 14
+    VS_PLATFORM: win32
+  - VS_VERSION: 14
+    VS_PLATFORM: x64
+
+
+before_build:
+  - md build-release
+  - cd build-release
+  - cmake -G "Visual Studio %VS_VERSION%" -DCMAKE_VERBOSE_MAKEFILE=1 -DTESTS=1 ../
+  - cd ../
+  - md build-debug
+  - cd build-debug
+  - cmake -G "Visual Studio %VS_VERSION%" -DCMAKE_VERBOSE_MAKEFILE=1 -DTESTS=1 -DDEBUG=1 ../
+  - cd ../
+
+build_script:
+  - cd build-release
+  - cmake --build . --config Release
+  - cd ../
+  - cd build-debug
+  - cmake --build . --config Debug
+  - cd ../
+
