@@ -2,7 +2,8 @@
  * @file nerstrand.c
  * @brief Top level functions for nerstrand
  * @author Dominique LaSalle <lasalle@cs.umn.edu>
- * Copyright 2013, Regents of the University of Minnesota
+ * Copyright 2013-2015, Regents of the University of Minnesota
+ * Copyright 2019, Dominique LaSalle
  * @version 1
  * @date 2013-07-23
  */
@@ -234,7 +235,8 @@ int nerstrand_cluster_explicit(
     return NERSTRAND_ERROR_INVALIDOPTIONS;
   }
 
-  graph = distribute_graph(*r_nvtxs,xadj,adjncy,adjwgt,NULL,NULL,
+  graph = distribute_graph(*r_nvtxs,xadj,adjncy,
+      objective->ignore_weight ? NULL : adjwgt, NULL, NULL,
       objective->nthreads,objective->distribution,objective->blocksize);
    
   clustering = __nerstrand_cluster(objective,graph);
@@ -274,7 +276,8 @@ int nerstrand_cluster_kway(
   objective->nclusters = *r_nclusters;
   setup_objective(objective);
 
-  graph = distribute_graph(*r_nvtxs,xadj,adjncy,adjwgt,NULL,NULL,
+  graph = distribute_graph(*r_nvtxs,xadj,adjncy, \
+      objective->ignore_weight ? NULL : adjwgt, NULL, NULL, \
       objective->nthreads,objective->distribution,objective->blocksize);
    
   clustering = __nerstrand_cluster(objective,graph);
@@ -312,7 +315,8 @@ int nerstrand_cluster_anyway(
   objective->parttype = NERSTRAND_PARTITION_ANYWAY;
   setup_objective(objective);
 
-  graph = distribute_graph(*r_nvtxs,xadj,adjncy,adjwgt,NULL,NULL,
+  graph = distribute_graph(*r_nvtxs,xadj,adjncy, \
+      objective->ignore_weight ? NULL : adjwgt, NULL, NULL, \
       objective->nthreads,objective->distribution,objective->blocksize);
    
   clustering = __nerstrand_cluster(objective,graph);

@@ -2,7 +2,8 @@
  * @file nerstrand_bin.c
  * @brief Main driver function
  * @author Dominique LaSalle <lasalle@cs.umn.edu>
- * Copyright 2014, Regents of the University of Minnesota
+ * Copyright 2014-2015, Regents of the University of Minnesota
+ * Copyright 2019, Dominique LaSalle
  * @version 1
  * @date 2014-09-16
  */
@@ -214,8 +215,10 @@ static const cmd_opt_t OPTS[] = {
       __ARRAY_SIZE(DISTRIBUTION_CHOICES)},
   {NERSTRAND_OPTION_NTHREADS,'T',"threads","The number of threads to use for "
       "clustering",CMD_OPT_INT,NULL,0},
+  {NERSTRAND_OPTION_IGNORE_WEIGHT,'W',"ignoreweights","Ignore edge weights "
+      "in input file (default=false).",CMD_OPT_FLAG,NULL,0},
   {NERSTRAND_OPTION_RESTEP,'j',"restep","The fraction of edges that will "
-    "trigger a re-step.",CMD_OPT_FLOAT,NULL,0}
+      "trigger a re-step.",CMD_OPT_FLOAT,NULL,0}
 };
 
 static const size_t NOPTS = __ARRAY_SIZE(OPTS);
@@ -341,6 +344,7 @@ int main(
 {
   int rv, err;
   size_t nargs;
+  adj_t e;
   vtx_t nvtxs, i;
   double * options = NULL;
   cid_t * uwhere = NULL;
@@ -387,7 +391,8 @@ int main(
     dl_start_timer(&(objective->timers.total));
     dl_start_timer(&(objective->timers.io));
   }
- 
+
+
   vprintf(objective->verbosity,NERSTRAND_VERBOSITY_LOW,"Reading '%s'\n", \
       input_file);
   err = wildriver_read_graph(input_file, &nvtxs, NULL, NULL, NULL, &xadj, \
@@ -397,6 +402,13 @@ int main(
     eprintf("Error reading graph\n");
     rv = 1;
     goto CLEANUP;
+  }
+
+  if (objective->ignore_weight && adjwgt) {
+    // replace weight with 1's
+    for (e=0;e<xadj[nvtxs];++e) {
+      adjwgt[e] = 1;
+    }
   }
 
   if (objective->nthreads > 1) {
