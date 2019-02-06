@@ -2,7 +2,8 @@
  * @file objective.c
  * @brief Functions for manipulating and creating objectives
  * @author Dominique LaSalle <lasalle@cs.umn.edu>
- * Copyright 2013, Regents of the University of Minnesota
+ * Copyright 2013-2015, Regents of the University of Minnesota
+ * Copyright 2019, Dominique LaSalle
  * @version 1
  * @date 2013-07-23
  */
@@ -231,6 +232,7 @@ objective_t * init_objective(
     objective_t * const objective)
 {
   objective->seed = (unsigned int)time(NULL);
+  objective->ignore_weight = 0;
 
   // TODO: remove this dependency on openmp
   if (omp_in_parallel()) {
@@ -507,6 +509,9 @@ int parse_objective(
   if (options[NERSTRAND_OPTION_DISTRIBUTION] != NERSTRAND_VAL_OFF) {
     objective->distribution = \
       (nerstrand_distribution_t)options[NERSTRAND_OPTION_DISTRIBUTION];
+  }
+  if (options[NERSTRAND_OPTION_IGNORE_WEIGHT] != NERSTRAND_VAL_OFF) {
+    objective->ignore_weight = 1;
   }
   if (options[NERSTRAND_OPTION_RESTEP] != NERSTRAND_VAL_OFF) {
     objective->restep = (double)options[NERSTRAND_OPTION_RESTEP];

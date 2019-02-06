@@ -2,7 +2,8 @@
  * @file nerstrand.h
  * @brief Main header for for nerstrand 
  * @author Dominique LaSalle <lasalle@cs.umn.edu>
- * Copyright 2013, Regents of the University of Minnesota
+ * Copyright 2013-2015, Regents of the University of Minnesota
+ * Copyright 2016-2019, Dominique LaSalle
  * @version 1
  * @date 2014-01-27
  */
@@ -30,7 +31,7 @@
 
 #define NERSTRAND_VER_MAJOR 0
 #define NERSTRAND_VER_MINOR 5
-#define NERSTRAND_VER_SUBMINOR 1
+#define NERSTRAND_VER_SUBMINOR 2
 
 
 
@@ -114,6 +115,7 @@ typedef enum nerstrand_option_t {
   NERSTRAND_OPTION_DEGREE_WEIGHT,
   NERSTRAND_OPTION_BLOCKSIZE,
   NERSTRAND_OPTION_DISTRIBUTION,
+  NERSTRAND_OPTION_IGNORE_WEIGHT,
   NERSTRAND_OPTION_RESTEP,
   __NERSTRAND_OPTION_TERM
 } nerstrand_option_t;

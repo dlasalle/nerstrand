@@ -48,6 +48,7 @@ typedef struct timers_t {
 typedef struct objective_t {
   unsigned int seed;
   vtx_t cnvtxs;
+  int ignore_weight;
   /* clustering parameters */
   vtx_t cnvtxs_per_cluster;
   vtx_t fm_vtx_limit;
