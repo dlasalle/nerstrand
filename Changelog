@@ -1,8 +1,10 @@
 # Changelog
 
-0.5.2 - 2019.02.05
+0.5.3 - 2019.02.05
   Update version of 'wildriver' to address input issues.
   Add '-W' option for ignoring edge weights.
+
+0.5.2 - 2017.06.13
 
 0.5.1 - 2017.06.01
   Switch to using 'wildriver' instead of 'bowstring'.
