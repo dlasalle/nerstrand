@@ -1,5 +1,9 @@
 # Changelog
 
+0.5.2 - 2019.02.05
+  Update version of 'wildriver' to address input issues.
+  Add '-W' option for ignoring edge weights.
+
 0.5.1 - 2017.06.01
   Switch to using 'wildriver' instead of 'bowstring'.
   Update version of 'domlib'.
@@ -17,7 +21,6 @@
   Fixed possible bug for large number of edges (4 billion) but moderate amount 
     of vertices.
   Modified the binary to allow for input of vertex-interal edge weights.
-
 
 0.4.4 - 2014.09.29
   Fixed issue floating point exception when the number of threads is greater
