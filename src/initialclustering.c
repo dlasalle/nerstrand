@@ -1528,7 +1528,6 @@ clustering_t * par_generate_kclustering(
     objective_t * const objective, 
     mgraph_t * const mgraph)
 {
-  
   size_t i,icnum,myics,myicstart;
   tid_t bestidx;
   mgraph_t * mymgraph;
@@ -1648,6 +1647,8 @@ clustering_t * par_generate_kclustering(
   }
 
   /* make sure everyone has copied out "seed" */
+  dlthread_barrier(objective->comm);
+
   if (myid == 0) {
     vprintf(objective->verbosity,NERSTRAND_VERBOSITY_MEDIUM,"Initial " \
         "clustering with modularity of "PF_MOD_T" selected.\n", \
