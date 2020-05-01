@@ -66,15 +66,17 @@ endif()
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99") 
 
-# build wildriver
-add_subdirectory("${WILDRIVER_PATH}")
-
-# use gnu directories
-include(GNUInstallDirs)
+if(UNIX AND NOT APPLE)
+  # use gnu directories
+  include(GNUInstallDirs)
+endif()
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+# build wildriver
+add_subdirectory("${WILDRIVER_PATH}")
 
 include_directories("${CMAKE_SOURCE_DIR}/include")
 include_directories("${DOMLIB_PATH}")
